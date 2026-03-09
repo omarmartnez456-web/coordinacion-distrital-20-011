@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Coordinación Distrital 20-011</title>
+
+<style>
+
+body{
+font-family: 'Segoe UI', sans-serif;
+margin:0;
+background:#f4f6f9;
+}
+
+/* HEADER */
+
+header{
+background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("fondo.png");
+background-size:cover;
+background-position:center;
+color:white;
+text-align:center;
+padding:90px 20px;
+}
+
+header h1{
+font-size:42px;
+margin:0;
+}
+
+header p{
+font-size:18px;
+margin-top:10px;
+}
+
+/* MENU */
+
+nav{
+background:#1e40af;
+padding:15px;
+text-align:center;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav a{
+color:white;
+margin:20px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#93c5fd;
+}
+
+/* SECCIONES */
+
+section{
+padding:60px;
+}
+
+/* TARJETAS */
+
+.card{
+background:white;
+padding:25px;
+margin:25px 0;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+/* TITULOS */
+
+h2{
+color:#1e3a8a;
+}
+
+/* CHATBOT */
+
+.chatbot-box{
+background:#e0f2fe;
+padding:25px;
+border-radius:10px;
+}
+
+#messages{
+height:220px;
+overflow-y:auto;
+background:white;
+padding:10px;
+border-radius:6px;
+margin-bottom:10px;
+}
+
+/* BOTONES */
+
+button{
+padding:10px 20px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1e40af;
+}
+
+/* CHAT FLOTANTE */
+
+.chat-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#2563eb;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+cursor:pointer;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
+
+footer{
+background:#1e3a8a;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Coordinación Distrital 20-011</h1>
+<p>San Jacinto, Chiquimula</p>
+</header>
+
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#documentos">Documentos</a>
+<a href="#chatbot">Asistente IA</a>
+<a href="#contacto">Contacto</a>
+</nav>
+
+<section id="inicio">
+
+<h2>Bienvenidos</h2>
+
+<div class="card">
+
+<p>
+Bienvenido al Sistema Digital Inteligente de Gestión Administrativa de la Coordinación Distrital 20-011.
+Esta plataforma facilita el acceso a información oficial, documentos institucionales y asistencia automatizada mediante Inteligencia Artificial.
+</p>
+
+</div>
+
+</section>
+
+<section id="nosotros">
+
+<h2>Información Institucional</h2>
+
+<div class="card">
+
+<p><b>Misión:</b> Somos una institución evolutiva, organizada, eficiente y eficaz que genera oportunidades educativas con pertinencia cultural.</p>
+
+<p><b>Visión:</b> Contar con centros educativos de calidad formando ciudadanos con valores y capacidades para su desarrollo integral.</p>
+
+<p><b>Objetivo:</b> Modernizar la gestión administrativa mediante herramientas digitales.</p>
+
+</div>
+
+</section>
+
+<section id="documentos">
+
+<h2>Documentos Oficiales</h2>
+
+<div class="card">
+
+<ul>
+
+<li>Reglamento Interno</li>
+<li>Modelo de Acta</li>
+<li>Circular Informativa</li>
+<li>Formato de Oficio</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="chatbot">
+
+<h2>Asistente Virtual Institucional</h2>
+
+<div class="chatbot-box">
+
+<div id="messages"></div>
+
+<input id="userInput" placeholder="Escribe tu consulta..." style="width:70%; padding:8px;">
+<button onclick="responder()">Enviar</button>
+
+</div>
+
+</section>
+
+<section id="contacto">
+
+<h2>Contacto</h2>
+
+<div class="card">
+
+<p>Email: omarmartnez456@gmail.com</p>
+
+<p>Teléfono: 5728-6135</p>
+
+<p>Dirección: San Jacinto, Chiquimula</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Realizado por</h2>
+
+<p>Franklin Omar Martínez Pérez</p>
+<p>Annlly Miriam Janeth Cruz Díaz</p>
+
+</section>
+
+<footer>
+
+© 2026 Coordinación Distrital 20-011 | Sistema Digital Inteligente
+
+</footer>
+
+<div class="chat-float" onclick="document.getElementById('chatbot').scrollIntoView({behavior:'smooth'});">
+
+Asistente IA
+
+</div>
+
+<script>
+
+function responder(){
+
+let input = document.getElementById("userInput").value.toLowerCase();
+
+let mensajes = document.getElementById("messages");
+
+mensajes.innerHTML += "<p><b>Tú:</b> "+input+"</p>";
+
+let respuesta = "Lo siento, no tengo información sobre eso.";
+
+if(input.includes("mision"))
+respuesta="La misión es garantizar una gestión educativa eficiente y acompañamiento pedagógico.";
+
+else if(input.includes("vision"))
+respuesta="La visión es fortalecer los centros educativos mediante procesos administrativos y pedagógicos eficientes.";
+
+else if(input.includes("oficio"))
+respuesta="Modelo de oficio: Por medio de la presente me permito saludarle cordialmente...";
+
+else if(input.includes("acta"))
+respuesta="Un acta debe contener: lugar, fecha, participantes, acuerdos y firmas.";
+
+else if(input.includes("horario"))
+respuesta="El horario de atención es de lunes a viernes de 8:00 AM a 4:00 PM.";
+
+mensajes.innerHTML += "<p><b>Asistente:</b> "+respuesta+"</p>";
+
+document.getElementById("userInput").value="";
+
+}
+
+</script>
+
+</body>
+</html>
